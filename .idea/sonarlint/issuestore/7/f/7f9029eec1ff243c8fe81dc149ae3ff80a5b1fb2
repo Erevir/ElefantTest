@@ -1,0 +1,5 @@
+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‰œ÷øÿÿÿÿ8ýåÖ„Ñ,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒºÑŸúÿÿÿÿ8ýåÖ„Ñ,
+Š"squid:ClassVariableVisibilityCheck"RMake driver a static final constant or non-public and provide accessors if needed.(ÔèË©úÿÿÿÿ8ýåÖ„Ñ,
+vsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(èŸþc8ýåÖ„Ñ,

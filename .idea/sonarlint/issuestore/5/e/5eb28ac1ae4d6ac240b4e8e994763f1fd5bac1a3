@@ -1,0 +1,18 @@
+
+isquid:CommentedOutCodeLine}"<This block of commented-out lines of code should be removed.(ß Ö‚8¯çÔ†Ñ,
+nsquid:CommentedOutCodeLineK"<This block of commented-out lines of code should be removed.(ËÙ±Úøÿÿÿÿ8Ó¹œ‡Ñ,
+"squid:ClassVariableVisibilityCheck"UMake functions a static final constant or non-public and provide accessors if needed.(Å¯¿¾úÿÿÿÿ8ˆ¾’…Ñ,
+jsquid:CommentedOutCodeLine‚"<This block of commented-out lines of code should be removed.(öÝŠÈ8¯çÔ†Ñ,
+nsquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(Èã¼ÿÿÿÿÿ8Ó¹œ‡Ñ,
+isquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(ß—˜í8Ó¹œ‡Ñ,
+hsquid:CommentedOutCodeLineb"<This block of commented-out lines of code should be removed.(ÔÀÐ`8Ó¹œ‡Ñ,
+isquid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(‹Øœ–8Ó¹œ‡Ñ,
+nsquid:CommentedOutCodeLineg"<This block of commented-out lines of code should be removed.(Œ˜†Ûùÿÿÿÿ8Ó¹œ‡Ñ,
+isquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(ëœº8Ó¹œ‡Ñ,
+´%squid:RedundantThrowsDeclarationCheck"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(È§Áïüÿÿÿÿ8¥ßé†Ñ,
+jsquid:CommentedOutCodeLine‡"<This block of commented-out lines of code should be removed.(²Éô±8ßûõ†Ñ,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¸æç(8†Íõ†Ñ,
+~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŠÝò¼ûÿÿÿÿ8ˆ¾’…Ñ,
+hsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(™ªþD8Ó¹œ‡Ñ,
+nsquid:CommentedOutCodeLineq"<This block of commented-out lines of code should be removed.(½íŸçþÿÿÿÿ8Ë©Î†Ñ,
+isquid:CommentedOutCodeLinex"<This block of commented-out lines of code should be removed.(·–‹¼8Ó¹œ‡Ñ,
