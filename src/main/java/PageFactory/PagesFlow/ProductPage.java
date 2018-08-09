@@ -1,5 +1,6 @@
 package PageFactory.PagesFlow;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,10 +16,15 @@ public class ProductPage {
     }
 
     @FindBy(how = How.XPATH, using = "//a/span[contains(text(),'Adauga in cos')]")
-    private WebElement addToCartProduct; //
+    private WebElement addToCartProduct; ////div[@id='main_comanda']/div/div/div/div/div/a[contains(text(),'Apa de toaleta One Shock, 200 ml, Pentru Barbati')]
+    @FindBy(how = How.XPATH, using = "//div[@id='main_comanda']/div/div/div/div/div/a[contains(text(),'Apa de toaleta One Shock, 200 ml, Pentru Barbat')]")
+    private WebElement choosenProduct;
+
+
     public ProductPage addToCart (){
         addToCartProduct.click();
         return this;
-
     }
+
+
 }

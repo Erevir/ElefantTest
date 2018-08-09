@@ -23,20 +23,20 @@ public class CartPage  {
 
     @FindBy(how = How.XPATH, using = "//div[@class='header-cart-icon']")
     private WebElement cart_button;
-    @FindBy(how = How.XPATH, using = "//div[@id='more_1981989_13']/a")
+    @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13']/a[contains(text(),'modifica')]")//div[@id='more_1994648_13']/a[contains(text(),'modifica')]
     private WebElement modifica_button;
-    @FindBy(how = How.XPATH, using = "//div[@id='more_1981989_13_actions']/div/a/span[@class='fa fa-plus-circle']")
+    @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13_actions']/div/a/span[@class='fa fa-plus-circle']")
     private WebElement plus_button;
-    @FindBy(how = How.XPATH, using = "//div[@id='more_1981989_13_actions']/div/a/span[@class='fa fa-minus-circle']")
+    @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13_actions']/div/a/span[@class='fa fa-minus-circle']")
     private WebElement minus_button;
-    @FindBy(how = How.XPATH, using = "//div[@id='more_1981989_13_actions']/div/a[contains(text(),'salveaza')]")
+    @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13_actions']/div/a[contains(text(),'salveaza')]")
     private WebElement save_button;
-    @FindBy(how = How.XPATH, using = "//div[@id='more_1981989_13_actions']/div/a[contains(text(),'anuleaza')]")
+    @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13_actions']/div/a[contains(text(),'anuleaza')]")
     private WebElement anulation_button;
-    @FindBy(how = How.XPATH, using = "//a[@id='1981989']")
+    @FindBy(how = How.XPATH, using = "//a[@id='1994648']")
     private WebElement delete_product_button;
     //div[@id='more_1981989_13']/div/span[contains(text(),'buc')]
-    @FindBy(how = How.XPATH, using = "//div[@id='more_1981989_13']/div/span[contains(text(),'buc')]")
+    @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13']/div/span[contains(text(),'buc')]")
     private WebElement quantity_product_field;
 
     public void clickCartButton() {
@@ -63,17 +63,21 @@ public class CartPage  {
         functions.clickWebElement(anulation_button);
     }
 
-    public void deleteProductFromCart() {
+    public CartPage deleteProductFromCart() {
         functions.clickWebElement(delete_product_button);
+        return this;
     }
 
-    public void verifyProductOnCart() {
+    public CartPage verifyProductOnCart() {
+        functions.waitExplicit(quantity_product_field,driver);
         String actualNrOfProduct = quantity_product_field.getText();
-        String expectedNrOfProduct = "2";
+        String expectedNrOfProduct = "1 buc";
         Assert.assertEquals(expectedNrOfProduct, actualNrOfProduct);
+        return this;
     }
 
-    public void regUser(){
+    public CartPage regUser(){
         loghinPage.login("username", "password");
+        return this;
     }
 }

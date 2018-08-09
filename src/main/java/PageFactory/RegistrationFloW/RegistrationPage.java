@@ -41,9 +41,9 @@ public class RegistrationPage {
     @FindBy(how = How.ID, using = "register_classic")
     private WebElement submit_button;
     @FindBy(how = How.XPATH, using = "//div[@class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1']/h3[contains(text(),'Inregistrare reusita')]")
-    private WebElement succes_message;
+    private WebElement succes_message; ////div[@class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1']/h3[contains(text(),'Inregistrare reusita')]
 
-    public void processRegistration(){
+    public RegistrationPage processRegistration(){
         functions.clickWebElement(registration_button);
         functions.clickWebElement(notLoggedInButton);
         functions.clickWebElement(gender_button);
@@ -54,12 +54,15 @@ public class RegistrationPage {
         functions.fillWebElement(confirmPasswordField,"Steelseries_85#");
         functions.clickWebElement(termBoxField);
         functions.clickWebElement(submit_button);
+        return this;
 
     }
-    public void validateRegistrationMessage(){
+    public RegistrationPage validateRegistrationMessage(){
+        functions.waitExplicit(succes_message,driver);
         String actualSuccesMessage = succes_message.getText();
         String expectedSuccesMessage = "Inregistrare reusita";
         Assert.assertEquals(expectedSuccesMessage, actualSuccesMessage);
+        return this;
     }
 
 

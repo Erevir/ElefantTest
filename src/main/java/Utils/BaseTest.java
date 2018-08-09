@@ -21,7 +21,7 @@ public class BaseTest {
     public void setup() throws IOException {
 
         driver = new DriverLoader().loadDriver();
-        driver.get("https://www.elefant.ro");
+        driver.get("https://www.elefant.ro/homepage");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -31,7 +31,7 @@ public class BaseTest {
         //using properties Class to create an object
         property = new Properties();
         //Call the file using
-        file = new FileInputStream("C:\\Users\\veremia\\Desktop\\Test automation internship\\TestBVB\\src\\main\\resources\\browser.properties");
+        file = new FileInputStream("browser.properties");
         //Load the file
         try {
             property.load(file);

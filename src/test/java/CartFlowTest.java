@@ -20,10 +20,13 @@ public class CartFlowTest extends BaseTest {
         cartPage.addProductFromCart();
         cartPage.addProductFromCart();
         cartPage.minusProductFromCart();
+        cartPage.minusProductFromCart();
+        cartPage.minusProductFromCart();
+
         cartPage.saveProductFromCart();
-//        cartPage.verifyProductOnCart();
-        Thread.sleep(1000);
-        cartPage.deleteProductFromCart();
+        cartPage.verifyProductOnCart();
+//        Thread.sleep(1000);
+//        cartPage.deleteProductFromCart();
 
 
     }
