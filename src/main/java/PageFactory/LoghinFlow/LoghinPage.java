@@ -1,5 +1,6 @@
 package PageFactory.LoghinFlow;
 
+import Utils.ProjectMethods;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoghinPage {
 
     WebDriver driver;
+    public ProjectMethods functions = new ProjectMethods(driver);
 
     public LoghinPage(WebDriver driver) {
         this.driver = driver;
@@ -32,26 +34,49 @@ public class LoghinPage {
     private WebElement my_acoount_button;
     @FindBy(how = How.ID, using = "logout-button")
     private WebElement logout_button;
+    @FindBy(how = How.XPATH, using = "//div[@class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 errors']")
+    private WebElement unsucces_message;
 
-    public void login(String username,String password) {
-        account_display_button.click();
-        logged_in_button.click();
-        user_box.sendKeys(username);
-        password_box.sendKeys(password);
-        submit_button.click();
+    public LoghinPage login(String username, String password) {
+        functions.clickWebElement(account_display_button);
+        functions.clickWebElement(logged_in_button);
+        functions.fillWebElement(user_box, username);
+        functions.fillWebElement(password_box, password);
+        functions.clickWebElement(submit_button);
+        return this;
     }
 
-    public void logout() {
-        my_acoount_button.click();
-        logout_button.click();
+    public LoghinPage nologin(String username, String nopassword) {
+        functions.waitExplicit(account_display_button, driver);
+        functions.clickWebElement(account_display_button);
+        functions.clickWebElement(logged_in_button);
+        functions.fillWebElement(user_box, username);
+        functions.fillWebElement(password_box, nopassword);
+        functions.clickWebElement(submit_button);
+        return this;
+    }
+
+    public LoghinPage logout() {
+        functions.waitExplicit(my_acoount_button, driver);
+        functions.clickWebElement(my_acoount_button);
+        functions.clickWebElement(logout_button);
+        return this;
     }
 
     //  check confirmation submit
-    public void validateSubmit() {
+    public LoghinPage validateSubmit() {
         String actualSuccesMessage = succes_message.getText();
         String expectedSuccesMessage = "Garibaldi";
         Assert.assertEquals(expectedSuccesMessage, actualSuccesMessage);
+        return this;
     }
 
+    //  check error submit
+    public LoghinPage validateErrorsSubmit() {
+        String actualSuccesMessage = unsucces_message.getText();
+        String expectedSuccesMessage = "Email-ul si/sau parola introduse sunt gresite.";
+        Assert.assertEquals(expectedSuccesMessage, actualSuccesMessage);
+        return this;
+    }
 }
 

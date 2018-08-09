@@ -31,7 +31,7 @@ public class BaseTest {
         //using properties Class to create an object
         property = new Properties();
         //Call the file using
-        file = new FileInputStream("browser.properties");
+        file = new FileInputStream("C:\\Users\\veremia\\Desktop\\Test automation internship\\TestBVB\\src\\test\\resources\\browser.properties");
         //Load the file
         try {
             property.load(file);

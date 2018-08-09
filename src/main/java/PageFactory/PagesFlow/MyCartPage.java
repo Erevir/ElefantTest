@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MyCartPage {
     WebDriver driver;
+
     public MyCartPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -19,12 +20,13 @@ public class MyCartPage {
     @FindBy(how = How.XPATH, using = "//div[@class='header-cart-icon']")
     private WebElement cart_button;
 
-    public void clickCartButton() {
+    public MyCartPage clickCartButton() {
         cart_button.click();
+        return this;
     }
 
-    public void verifyChoosenProduct() {
+    public MyCartPage verifyChoosenProduct() {
         Assert.assertTrue(choosenProduct.getText().contains("Apa de toaleta One Shock, 200 ml, Pentru Barbat"));
-
+        return this;
     }
 }

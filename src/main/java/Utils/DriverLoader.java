@@ -15,8 +15,8 @@ public class DriverLoader {
     WebDriver driver;
 
     public WebDriver loadDriver() throws IOException {
-        System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\veremia\\Desktop\\Test automation internship\\TestBVB\\src\\test\\resources\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\veremia\\Desktop\\Test automation internship\\TestBVB\\src\\test\\resources\\chromedriver.exe");
         String browser = getBrowserType();
         if (browser.equals("firefox")) {
             driver = new FirefoxDriver();
@@ -44,7 +44,7 @@ public class DriverLoader {
 
     private String getBrowserFromFile() throws IOException {
         Properties prop = new Properties();
-        InputStream propFile = new FileInputStream("browser.properties");
+        InputStream propFile = new FileInputStream("C:\\Users\\veremia\\Desktop\\Test automation internship\\TestBVB\\src\\test\\resources\\browser.properties");
         prop.load(propFile);
         return prop.getProperty("browser");
     }

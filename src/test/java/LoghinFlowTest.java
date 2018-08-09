@@ -11,11 +11,16 @@ public class LoghinFlowTest extends BaseTest  {
         LoghinPage loghinPage = new LoghinPage(driver);
         String username = BaseTest.getValue("username");
         String password = BaseTest.getValue("password");
+        String nopassword= "jahdjkashd";
 
         loghinPage.login(username, password);
         loghinPage.validateSubmit();
-        Thread.sleep(2500);
+//        Thread.sleep(2500);
         loghinPage.logout();
+//        Thread.sleep(1000);
+
+        loghinPage.nologin(username,nopassword);
+        loghinPage.validateErrorsSubmit();
         driver.close();
     }
 }

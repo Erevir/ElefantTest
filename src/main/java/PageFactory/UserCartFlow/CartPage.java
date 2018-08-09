@@ -13,7 +13,6 @@ public class CartPage  {
 
     WebDriver driver;
     public ProjectMethods functions = new ProjectMethods(driver);
-
     LoghinPage loghinPage = new LoghinPage(driver);
 
     public CartPage(WebDriver driver) {
@@ -39,28 +38,34 @@ public class CartPage  {
     @FindBy(how = How.XPATH, using = "//div[@id='more_1994648_13']/div/span[contains(text(),'buc')]")
     private WebElement quantity_product_field;
 
-    public void clickCartButton() {
+    public CartPage clickCartButton() {
         functions.clickWebElement(cart_button);
+        return this;
     }
 
-    public void modifyProductFromCart() {
+    public CartPage modifyProductFromCart() {
         functions.clickWebElement(modifica_button);
+        return this;
     }
 
-    public void addProductFromCart() {
+    public CartPage addProductFromCart() {
         functions.clickWebElement(plus_button);
+        return this;
     }
 
-    public void minusProductFromCart() {
+    public CartPage minusProductFromCart() {
         functions.clickWebElement(minus_button);
+        return this;
     }
 
-    public void saveProductFromCart() {
+    public CartPage saveProductFromCart() {
         functions.clickWebElement(save_button);
+        return this;
     }
 
-    public void anulationProductFromCart() {
+    public CartPage anulationProductFromCart() {
         functions.clickWebElement(anulation_button);
+        return this;
     }
 
     public CartPage deleteProductFromCart() {
@@ -76,8 +81,8 @@ public class CartPage  {
         return this;
     }
 
-    public CartPage regUser(){
-        loghinPage.login("username", "password");
-        return this;
-    }
+//    public CartPage regUser(){
+//        loghinPage.login("username", "password");
+//        return this;
+//    }
 }
