@@ -15,7 +15,7 @@ public class MyCartPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(how = How.XPATH, using = "//div[@id='main_comanda']/div/div/div/div/div/a[contains(text(),'Apa de toaleta One Shock, 200 ml, Pentru Barbat')]")
+    @FindBy(how = How.XPATH, using = "//div[@id='main_comanda']/div/div/div/div/div/a[contains(text(),'Apa de toaleta One Shock, 200 ml, Pentru Barbati')]")
     private WebElement choosenProduct;
     @FindBy(how = How.XPATH, using = "//div[@class='header-cart-icon']")
     private WebElement cart_button;

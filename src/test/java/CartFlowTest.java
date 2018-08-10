@@ -11,6 +11,7 @@ public class CartFlowTest extends BaseTest {
 
         LoghinPage loghinPage = new LoghinPage(driver);
         CartPage cartPage = new CartPage(driver);
+
         String username = BaseTest.getValue("username");
         String password = BaseTest.getValue("password");
 
@@ -21,12 +22,13 @@ public class CartFlowTest extends BaseTest {
         cartPage.addProductFromCart();
         cartPage.minusProductFromCart();
         cartPage.minusProductFromCart();
-        cartPage.minusProductFromCart();
+
 
         cartPage.saveProductFromCart();
         cartPage.verifyProductOnCart();
-//        Thread.sleep(1000);
-//        cartPage.deleteProductFromCart();
+        cartPage.deleteProductFromCart();
+
+
 
 
     }

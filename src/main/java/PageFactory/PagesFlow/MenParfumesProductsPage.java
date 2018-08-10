@@ -39,8 +39,11 @@ public class MenParfumesProductsPage {
     @FindBy(how = How.XPATH, using = "//span[contains(text(),'Reducere 50%-70%')]")
     private WebElement discount_select_button; // check ex. span class="elf-name pull-left">Reducere 50%-70%
 
-    @FindBy(how = How.XPATH, using = "//div/a[contains(text(),'Apa de toaleta One Shock, 200 ml, Pentru Barbati')]")
-    private WebElement choosen_product; // click img choose the product
+    @FindBy(how = How.XPATH, using = "//div[@id='101178249']/div/div/div/div/a[contains(text(),'Apa de toaleta Pour Homme, 100 ml, Pentru Barbati')]")
+    private WebElement choosen_product_101178249; // click img choose the product Givenchy red
+
+    @FindBy(how = How.XPATH, using = "//div[@id='101566969']/div/div/div/div/a [contains(text(),'Apa de toaleta One Shock, 200 ml, Pentru Barbati')]")
+    private WebElement choosen_product_101566969; // click img choose the product
 
     @FindBy(how = How.XPATH, using = "//a/span[contains(text(),'Cosmetice si Parfumuri')]")
     private WebElement findMenParfumesProductPageTitle; //
@@ -50,18 +53,18 @@ public class MenParfumesProductsPage {
         try {
             functions.clickWebElement(sort_button);
             functions.waitExplicit(sort_select_button, driver);
+
             functions.clickWebElement(sort_select_button);
-//            functions.waitExplicit(discount_button, driver);
-//            functions.clickWebElement(discount_button);
             functions.waitExplicit(discount_select_button, driver);
+
             functions.clickWebElement(discount_select_button);
-            functions.waitExplicit(quantity_checkbox, driver);
-            JavascriptExecutor jsx = (JavascriptExecutor) driver;
-            jsx.executeScript("window.scrollBy(0,850)", "");
-            functions.clickWebElement(quantity_checkbox);
-            functions.waitExplicit(brand_checkbox, driver);
-            jsx.executeScript("window.scrollBy(0,850)", "");
-            functions.clickWebElement(brand_checkbox);
+//            functions.waitExplicit(quantity_checkbox, driver);
+//            JavascriptExecutor jsx = (JavascriptExecutor) driver;
+//            jsx.executeScript("window.scrollBy(1,250)", "");
+//            functions.clickWebElement(quantity_checkbox);
+//            functions.waitExplicit(brand_checkbox, driver);
+//            jsx.executeScript("window.scrollBy(0,850)", "");
+//            functions.clickWebElement(brand_checkbox);
 
         } catch (UnhandledAlertException e) {
 //            driver.switchTo().alert().dismiss();
@@ -75,7 +78,7 @@ public class MenParfumesProductsPage {
     }
 
     public ProductPage clickChoosenProduct() {
-        choosen_product.click();
+        choosen_product_101566969.click();
         return new ProductPage(driver);
     }
 

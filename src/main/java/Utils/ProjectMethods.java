@@ -56,7 +56,7 @@ public class ProjectMethods {
 
     //    Wait explicit
     public void waitExplicit(WebElement element, WebDriver driver) {
-        new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOf(element));
     }
 
     public void acceptAlert() {
